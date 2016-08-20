@@ -1,0 +1,31 @@
+{
+  "name": "react-native-text",
+  "version": "0.0.1",
+  "description": "Scalable font size in Text component for React Native",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knowbody/react-native-text.git"
+  },
+  "keywords": [
+    "react-native",
+    "scaled",
+    "ios",
+    "android",
+    "text",
+    "react"
+  ],
+  "author": "Mateusz Zatorski <mateuszzatorski@gmail.com> (https://github.com/knowbody)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knowbody/react-native-text/issues"
+  },
+  "homepage": "https://github.com/knowbody/react-native-text#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
