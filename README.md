@@ -1,11 +1,36 @@
 React Native Text
 ===
 
-### About
+## About
 
 React Native Text scales the font size based on a device width.
 
-### Get Started
+This is the comparison of two screens (iPhone 4s and iPhone 6s Plus), 
+with applied style:
+
+```js
+welcome: {
+  fontSize: 31,
+  textAlign: 'center',
+  margin: 10,
+},
+instructions: {
+  fontSize: 16,
+  textAlign: 'center',
+  color: '#333333',
+  marginBottom: 5,
+}
+```
+
+### With react-native-text
+
+![with](https://cloud.githubusercontent.com/assets/3802023/17853378/08e0c0f6-6864-11e6-80ac-161b5735c2f3.png)
+
+### Without (using <Text> from React Native Core)
+
+![without](https://cloud.githubusercontent.com/assets/3802023/17853397/225601ae-6864-11e6-9742-55f2ad527e48.png)
+
+## Get Started
 
 1. `npm install --save react-native-text`
 2. Example usage:
