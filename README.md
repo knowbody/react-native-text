@@ -26,7 +26,7 @@ instructions: {
 
 ![with](https://cloud.githubusercontent.com/assets/3802023/17853378/08e0c0f6-6864-11e6-80ac-161b5735c2f3.png)
 
-### Without (using <Text> from React Native Core)
+### Without (using `<Text />` from React Native Core)
 
 ![without](https://cloud.githubusercontent.com/assets/3802023/17853397/225601ae-6864-11e6-9742-55f2ad527e48.png)
 
