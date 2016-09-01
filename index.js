@@ -21,4 +21,8 @@ ScalableText.propTypes = {
   children: PropTypes.node.isRequired
 };
 
+ScalableText.defaultProps = {
+  style: {}
+};
+
 export default ScalableText;
