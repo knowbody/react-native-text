@@ -6,8 +6,10 @@ const realWidth = height > width ? width : height;
 
 const ScalableText = ({ style, children, ...props }) => {
   const fontSize = flattenStyle(style).fontSize || 14;
-  const scaledFontSize = Math.round(fontSize * realWidth / 375);
-
+  var scaledFontSize = Math.round(fontSize * realWidth / 375);
+  if (scaledFontSize > fontSize) {
+    scaledFontSize = fontSize
+  }
   return (
     <Text style={[style, { fontSize: scaledFontSize }]} {...props}>
       {children}
