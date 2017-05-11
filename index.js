@@ -19,7 +19,6 @@ const ScalableText = ({ style, children, onlyScaleDown, ...props }) => {
 
 ScalableText.propTypes = {
   style: Text.propTypes.style,
-  onlyScaleDown: propTypes.boolean,
   children: PropTypes.node
 };
 
