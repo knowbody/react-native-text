@@ -4,7 +4,7 @@ const {width, height} = Dimensions.get('window');
 const flattenStyle = StyleSheet.flatten;
 const realWidth = height > width ? width : height;
 
-const ScalableText = ({ style, children, ...props }) => {
+const ScalableText = ({ style, children, onlyScaleDown, ...props }) => {
   const fontSize = flattenStyle(style).fontSize || 14;
   var scaledFontSize = Math.round(fontSize * realWidth / 375);
   if (scaledFontSize > fontSize && onlyScaleDown) {
