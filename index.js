@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Dimensions, Text, StyleSheet } from 'react-native';
 const { width, height } = Dimensions.get('window');
 const flattenStyle = StyleSheet.flatten;

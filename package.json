@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/knowbody/react-native-text#readme",
   "peerDependencies": {
+    "prop-types": "*",
     "react": "*",
     "react-native": "*"
   }
