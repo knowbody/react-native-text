@@ -5,12 +5,12 @@ const { width, height } = Dimensions.get('window');
 const flattenStyle = StyleSheet.flatten;
 const realWidth = height > width ? width : height;
 
-const ScalableText = ({ style, children, ...props }) => {
+const ScalableText = ({ deviceBaseWidth, style, children, ...props }) => {
   const fontSize = flattenStyle(style).fontSize || 14;
   // Default line height is 120% of the font size.
   const lineHeight = flattenStyle(style).lineHeight || fontSize * 1.2;
-  const scaledFontSize = Math.round(fontSize * realWidth / 375);
-  const scaledLineHeight = Math.round(lineHeight * realWidth / 375);
+  const scaledFontSize = Math.round(fontSize * realWidth / deviceBaseWidth);
+  const scaledLineHeight = Math.round(lineHeight * realWidth / deviceBaseWidth);
 
   return (
     <Text style={[style, { fontSize: scaledFontSize, lineHeight: scaledLineHeight }]} {...props}>
@@ -28,6 +28,8 @@ ScalableText.propTypes = {
 };
 
 ScalableText.defaultProps = {
+  // iPhone 6 width
+  deviceBaseWidth: 375,
   style: {}
 };
 
