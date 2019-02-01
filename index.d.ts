@@ -1,6 +1,6 @@
 import { TextProps as BaseTextProps } from 'react-native'
 
-interface TextProps extends BaseTextProps {
+export interface TextProps extends BaseTextProps {
   baseDeviceWidth?: number
 }
 
