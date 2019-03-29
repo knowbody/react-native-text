@@ -4,4 +4,4 @@ export interface TextProps extends BaseTextProps {
   baseDeviceWidth?: number
 }
 
-export default function Text(props: TextProps): JSX.Element {}
+export default function Text(props: TextProps): JSX.Element
