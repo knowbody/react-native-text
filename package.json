@@ -3,6 +3,7 @@
   "version": "0.0.8",
   "description": "Scalable font size in Text component for React Native",
   "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
