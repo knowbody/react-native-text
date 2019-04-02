@@ -1,36 +1,51 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Dimensions, Text, StyleSheet } from 'react-native';
-const { width, height } = Dimensions.get('window');
-const flattenStyle = StyleSheet.flatten;
-const realWidth = height > width ? width : height;
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Dimensions, Text, StyleSheet } from 'react-native'
 
-const ScalableText = ({ deviceBaseWidth, style, children, ...props }) => {
-  const fontSize = flattenStyle(style).fontSize || 14;
-  // Default line height is 120% of the font size.
-  const lineHeight = flattenStyle(style).lineHeight || fontSize * 1.2;
-  const scaledFontSize = Math.round(fontSize * realWidth / deviceBaseWidth);
-  const scaledLineHeight = Math.round(lineHeight * realWidth / deviceBaseWidth);
+const { width, height } = Dimensions.get('window')
+const realWidth = height > width ? width : height
+
+function ScalableText({ deviceBaseWidth, style, children, ...props }) {
+  const { fontSize, lineHeight } = StyleSheet.flatten(style)
 
   return (
-    <Text style={[style, { fontSize: scaledFontSize, lineHeight: scaledLineHeight }]} {...props}>
+    <Text
+      style={[
+        style,
+        scaleText({
+          deviceBaseWidth,
+          fontSize,
+          lineHeight,
+        }),
+      ]}
+      {...props}
+    >
       {children}
     </Text>
-  );
-};
+  )
+}
 
 ScalableText.propTypes = {
   style: Text.propTypes.style,
-  children:PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.string
-  ]).isRequired
-};
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+}
 
 ScalableText.defaultProps = {
   // iPhone 6 width
   deviceBaseWidth: 375,
-  style: {}
-};
+  style: {},
+}
 
-export default ScalableText;
+export default ScalableText
+
+export function scaleText({
+  deviceBaseWidth,
+  fontSize = 14,
+  // Default line height is 120% of the font size.
+  lineHeight = fontSize * 1.2,
+}) {
+  return {
+    fontSize: Math.round((fontSize * realWidth) / deviceBaseWidth),
+    lineHeight: Math.round((lineHeight * realWidth) / deviceBaseWidth),
+  }
+}
