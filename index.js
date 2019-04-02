@@ -5,7 +5,13 @@ import { Dimensions, Text, StyleSheet } from 'react-native'
 const { width, height } = Dimensions.get('window')
 const realWidth = height > width ? width : height
 
-function ScalableText({ deviceBaseWidth, style, children, ...props }) {
+function ScalableText({
+  // iPhone 6 width
+  deviceBaseWidth = 375,
+  style = {},
+  children,
+  ...props
+}) {
   const { fontSize, lineHeight } = StyleSheet.flatten(style)
 
   return (
@@ -26,14 +32,9 @@ function ScalableText({ deviceBaseWidth, style, children, ...props }) {
 }
 
 ScalableText.propTypes = {
+  deviceBaseWidth: PropTypes.number,
   style: Text.propTypes.style,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-}
-
-ScalableText.defaultProps = {
-  // iPhone 6 width
-  deviceBaseWidth: 375,
-  style: {},
 }
 
 export default ScalableText
