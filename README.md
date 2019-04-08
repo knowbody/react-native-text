@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeText
+export default WelcomeText;
 ```
 
 ### Cool! Can I get the same effect outside a `<Text />` element?
