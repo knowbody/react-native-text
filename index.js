@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Dimensions, Text, StyleSheet } from 'react-native'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Dimensions, Text, StyleSheet } from 'react-native';
 
-const { width, height } = Dimensions.get('window')
-const realWidth = height > width ? width : height
+const { width, height } = Dimensions.get('window');
+const realWidth = height > width ? width : height;
 
 function ScalableText({
   // iPhone 6 width
@@ -12,7 +12,7 @@ function ScalableText({
   children,
   ...props
 }) {
-  const { fontSize, lineHeight } = StyleSheet.flatten(style)
+  const { fontSize, lineHeight } = StyleSheet.flatten(style);
 
   return (
     <Text
@@ -28,16 +28,16 @@ function ScalableText({
     >
       {children}
     </Text>
-  )
+  );
 }
 
 ScalableText.propTypes = {
   deviceBaseWidth: PropTypes.number,
   style: Text.propTypes.style,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-}
+};
 
-export default ScalableText
+export default ScalableText;
 
 export function scaleText({
   deviceBaseWidth,
@@ -48,5 +48,5 @@ export function scaleText({
   return {
     fontSize: Math.round((fontSize * realWidth) / deviceBaseWidth),
     lineHeight: Math.round((lineHeight * realWidth) / deviceBaseWidth),
-  }
+  };
 }
