@@ -1,11 +1,10 @@
-React Native Text
-===
+# React Native Text
 
 ## About
 
 React Native Text scales the font size based on a device width.
 
-This is the comparison of two screens (iPhone 4s and iPhone 6s Plus), 
+This is the comparison of two screens (iPhone 4s and iPhone 6s Plus),
 with applied style:
 
 ```js
@@ -45,15 +44,33 @@ const WelcomeText = ({ text }) => (
 );
 
 WelcomeText.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
   text: {
     color: 'tomato',
-    fontSize: 28
-  }
+    fontSize: 28,
+  },
 });
 
 export default WelcomeText;
 ```
+
+### Cool! Can I get the same effect outside a `<Text />` element?
+
+Yes, you can! The `scaleText` function is a named export. Invoke it with the following signature:
+
+```js
+import { scaleText } from 'react-native-text';
+
+const style = scaleText({
+  deviceBaseWidth: 375,
+  fontSize: 14,
+  lineHeight: 14 * 1.2,
+}); // returns: { fontSize, lineHeight }
+```
+
+## LICENSE
+
+MIT
