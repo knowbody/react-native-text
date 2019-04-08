@@ -35,24 +35,24 @@ instructions: {
 2. Example usage:
 
 ```js
-import React, { PropTypes } from 'react'
-import { StyleSheet } from 'react-native'
-import ScalableText from 'react-native-text'
+import React, { PropTypes } from 'react';
+import { StyleSheet } from 'react-native';
+import ScalableText from 'react-native-text';
 
 const WelcomeText = ({ text }) => (
   <ScalableText style={styles.text}>{text}</ScalableText>
-)
+);
 
 WelcomeText.propTypes = {
   text: PropTypes.string.isRequired,
-}
+};
 
 const styles = StyleSheet.create({
   text: {
     color: 'tomato',
     fontSize: 28,
   },
-})
+});
 
 export default WelcomeText
 ```
@@ -62,13 +62,13 @@ export default WelcomeText
 Yes, you can! The `scaleText` function is a named export. Invoke it with the following signature:
 
 ```js
-import { scaleText } from 'react-native-text'
+import { scaleText } from 'react-native-text';
 
 const style = scaleText({
   deviceBaseWidth: 375,
   fontSize: 14,
   lineHeight: 14 * 1.2,
-}) // returns: { fontSize, lineHeight }
+}); // returns: { fontSize, lineHeight }
 ```
 
 ## LICENSE
