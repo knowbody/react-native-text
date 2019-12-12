@@ -2,6 +2,8 @@ import { TextProps as BaseTextProps } from 'react-native';
 
 export interface TextProps extends BaseTextProps {
   deviceBaseWidth?: number;
+  style?: any;
+  children: string;
 }
 
 export interface ScaledStyles {
