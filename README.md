@@ -31,7 +31,7 @@ instructions: {
 
 ## Get Started
 
-1. `npm install --save react-native-text`
+1. `yarn add react-native-text`
 2. Example usage:
 
 ```js
@@ -39,13 +39,7 @@ import React, { PropTypes } from 'react';
 import { StyleSheet } from 'react-native';
 import ScalableText from 'react-native-text';
 
-const WelcomeText = ({ text }) => (
-  <ScalableText style={styles.text}>{text}</ScalableText>
-);
-
-WelcomeText.propTypes = {
-  text: PropTypes.string.isRequired,
-};
+const WelcomeText = ({ text }) => <ScalableText style={styles.text}>{text}</ScalableText>;
 
 const styles = StyleSheet.create({
   text: {
@@ -69,6 +63,14 @@ const style = scaleText({
   fontSize: 14,
   lineHeight: 14 * 1.2,
 }); // returns: { fontSize, lineHeight }
+```
+
+Or with a React Hook `useScaleText`:
+
+```js
+import { useScaleText } from 'react-native-text';
+
+const { fontSize, lineHeight } = useScaleText({ fontSize: 18 });
 ```
 
 ## LICENSE
