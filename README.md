@@ -21,6 +21,8 @@ instructions: {
 }
 ```
 
+You can also check out the example usage on Snack: https://snack.expo.io/@knowbody/react-native-text-example
+
 ### With react-native-text
 
 ![with](https://cloud.githubusercontent.com/assets/3802023/17853378/08e0c0f6-6864-11e6-80ac-161b5735c2f3.png)
