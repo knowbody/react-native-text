@@ -1,6 +1,6 @@
 {
   "name": "react-native-text",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Scalable font size in Text component for React Native",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
